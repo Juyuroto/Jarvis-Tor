@@ -104,7 +104,6 @@ Le projet surveille une **Wishlist multi-utilisateurs** de médias (Films, Séri
 │   ├── main.py                 # Boucle principale de surveillance de la Wishlist
 │   ├── ollama_client.py        # Communication avec l'API Ollama (Analyse LLM)
 │   ├── qbit_client.py          # Gestionnaire de téléchargements qBittorrent
-│   ├── jellyfin_client.py      # Trigger API pour rafraîchir la bibliothèque Jellyfin
 │   ├── transfer.py             # Transfert SFTP/Rsync vers les dossiers utilisateurs du Serveur 2
 │   └── requirements.txt        # Dépendances Python (requests, paramiko, etc.)
 └── config/                     # Volumes persistants des conteneurs
@@ -118,10 +117,11 @@ Format JSON (wishlist.json):
 
 ```json
 [
-  {"user": "communs", "title": "Seven", "year": 1995},
+  {"title": "Interstellar", "year": "2014", "user": "Alain"},
   {"user": "User1", "title": "Inception", "year": 2010},
   {"user": "User2", "title": "Le Voyage de Chihiro", "year": 2001},
   {"user": "User3", "title": "Interstellar", "year": 2014}
+  {"user": "Serie", "title": "Yellowstone", "type": "serie", "season": 2, }
 ]
 ```
 
