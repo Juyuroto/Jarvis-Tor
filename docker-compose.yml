@@ -19,6 +19,7 @@ services:
       - SERVER_CITIES=${SERVER_CITIES}
       - TZ=Europe/Brussels
       - FIREWALL_OUTBOUND_SUBNETS=192.168.20.0/24
+      - FIREWALL_INPUT_PORTS=8002
     devices:
       - /dev/net/tun:/dev/net/tun
 
@@ -95,8 +96,8 @@ services:
       - ollama
 
   frontend:
-    image: fubooki/jarvis_tor:frontend
     container_name: jarvis_frontend
+    image: fubooki/jarvis_tor:frontend
     ports:
       - "${Frontend_Port}:${Frontend_Port}"
     environment:
