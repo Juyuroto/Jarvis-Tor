@@ -10,7 +10,7 @@ services:
       - 11434:11434/tcp
       - 8888:8888/tcp # HTTP proxy
       - 8388:8388/tcp # Shadowsocks
-      - 8000:8000/tcp # API Backend
+      - 8002:8002/tcp # API Backend
     environment:
       - VPN_SERVICE_PROVIDER=mullvad
       - VPN_TYPE=wireguard
