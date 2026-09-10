@@ -4,6 +4,9 @@ services:
     image: qmcgaw/gluetun:latest
     cap_add:
       - NET_ADMIN
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
     ports:
       - 8080:8080/tcp # Accès qBittorrent
       - 9696:9696/tcp # Accès Prowlarr
@@ -20,6 +23,7 @@ services:
       - TZ=Europe/Brussels
       - FIREWALL_OUTBOUND_SUBNETS=192.168.20.0/24
       - FIREWALL_INPUT_PORTS=8002
+      - DOT=off
     devices:
       - /dev/net/tun:/dev/net/tun
 
